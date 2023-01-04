@@ -8,6 +8,24 @@
   </head>
 
   <body>
-    <h1>Hello !!!</h1>
+    <h1>Location API</h1>
+    <ul>
+    </ul>
+    <script>
+      const main = async () => {
+        let result = await fetch("/api/locations");
+        let data = await result.json();
+        modifyUI(data);
+      };
+
+      main();
+
+      const modifyUI = (data) => {
+        let ul = document.querySelector("ul");
+        // ...
+        ul.innerHTML += '<li> data.id + " - " + data.latitude + " - " + data.longidute </li>'
+      };
+    </script>
+  </body>
   </body>
 </html>
